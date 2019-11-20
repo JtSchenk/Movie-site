@@ -9,6 +9,7 @@ namespace Movies.Pages
 {
     public class IndexModel : PageModel
     {
+
         public List<Movie> Movies;
 
         [BindProperty]
@@ -30,7 +31,7 @@ namespace Movies.Pages
             Movies = MovieDatabase.All;
         }
 
-        public void OnPost()
+        public void OnPost(string search, List<string> mpaa, float? minIMDB, float? maxIMDB)
         {
             Movies = MovieDatabase.All;
 
